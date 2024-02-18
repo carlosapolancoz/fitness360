@@ -10,3 +10,101 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: fitness360
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap');
+
+:root {
+    /** Fuentes **/
+    --fuente-principal: 'Raleway', sans-serif;
+    --fuente-headings: 'Staatliches', cursive;
+    /** Colores **/
+    --color-primario: #FF5B00;
+    --color-gris: #2F2E2E;
+    --color-gris-claro: #EBEBEB;
+    --color-blanco: #FFF;
+    --color-negro: #000;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10px = 1rem */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    font-size: 1.8rem;
+    line-height: 2;
+}
+
+/** Headings **/
+h1, h2, h3, h4 {
+    font-family: var(--fuente-headings);
+    margin: 0 0 5rem 0;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 { 
+    font-size: 4.8rem;
+}
+
+h3 { 
+    font-size: 3.6rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+/** Gloables **/
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.contenedor {
+    width: min(95%, 120rem);
+    margin: 0 auto;
+}
+
+/** Utilidades **/
+.text-center {
+    text-align: center;
+}
+
+.texto-primary {
+    color: var(--color-primario);
+}
+
+.texto-blanco {
+    color: var(--color-blanco);
+}
+
+.seccion {
+    padding: 5rem 0;
+}
