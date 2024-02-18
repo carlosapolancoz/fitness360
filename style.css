@@ -27,7 +27,8 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; /* 10px = 1rem */
+    font-size: 62.5%;
+    /* 10px = 1rem */
 }
 
 *,
@@ -43,7 +44,10 @@ body {
 }
 
 /** Headings **/
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--fuente-headings);
     margin: 0 0 5rem 0;
     line-height: 1.2;
@@ -53,11 +57,11 @@ h1 {
     font-size: 6rem;
 }
 
-h2 { 
+h2 {
     font-size: 4.8rem;
 }
 
-h3 { 
+h3 {
     font-size: 3.6rem;
 }
 
@@ -107,4 +111,90 @@ img {
 
 .seccion {
     padding: 5rem 0;
+}
+
+/** Header **/
+.header {
+    background-color: var(--color-gris);
+}
+
+.barra-navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .barra-navegacion {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/*
+.menu-principal ul {
+    display: none;
+}
+*/
+
+@media (min-width: 768px) {
+    .menu-principal {
+        display: block;
+    }
+
+    .menu-principal .menu {
+        display: flex;
+    }
+}
+
+.menu-principal a {
+    font-family: var(--fuente-headings);
+    display: block;
+    text-align: center;
+    color: var(--color-blanco);
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+}
+
+@media (min-width: 768px) {
+    .menu-principal a {
+        position: relative;
+        z-index: 1;
+    }
+
+    .menu-principal .current_page_item {
+        border-bottom: 3px solid var(--color-primario);
+    }
+
+    .menu-principal a::before,
+    .menu-principal a::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 50%;
+        background-color: var(--color-primario);
+        z-index: -1;
+        transform: scaleX(0);
+        transition: transform .6s;
+    }
+
+    .menu-principal a::before {
+        top: 0;
+        transform-origin: left;
+    }
+
+    .menu-principal a::after {
+        top: 50%;
+        transform-origin: right;
+    }
+
+    .menu-principal a:hover::before {
+        transform: scaleX(1);
+    }
+
+    .menu-principal a:hover::after {
+        transform: scaleX(1);
+    }
 }
