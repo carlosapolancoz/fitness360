@@ -1,7 +1,10 @@
 <?php 
+    /*
+    * Template Name: Contenido Centrado (No Sidebars)
+    */
     get_header();
 ?>
-    <main class="contenedor seccion">
+    <main class="contenedor seccion contenido-centrado">
     <?php
         while(have_posts()): the_post();
         

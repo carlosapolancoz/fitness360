@@ -1,5 +1,12 @@
 <?php
 
+    function fitness360_setup() {
+        // Imagenes Destacadas
+        add_theme_support('post-thumbnails');
+    }
+
+    add_action('after_setup_theme', 'fitness360_setup');
+
     function fitness360_menus() {
         register_nav_menus(array(
             'menu-principal' => __('Menu Principal', 'fitness360')
