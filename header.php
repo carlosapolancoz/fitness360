@@ -19,7 +19,6 @@
                     'container_class' => 'menu-principal'
                 );
 
-
                 wp_nav_menu($args);
             ?>
         </div>
