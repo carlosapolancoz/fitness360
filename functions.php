@@ -3,6 +3,9 @@
     function fitness360_setup() {
         // Imagenes Destacadas
         add_theme_support('post-thumbnails');
+
+        // Titulos para SEO
+        add_theme_support('title-tag');
     }
 
     add_action('after_setup_theme', 'fitness360_setup');
