@@ -1,11 +1,11 @@
 <?php 
     get_header();
 ?>
-    <main>
+    <main class="contenedor seccion">
     <?php
         while(have_posts()): the_post();
         
-            the_title();
+            the_title('<h1 class="text-center text-primary">', '</h1>');
 
             the_content();
 

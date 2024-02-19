@@ -101,11 +101,11 @@ img {
     text-align: center;
 }
 
-.texto-primary {
+.text-primary {
     color: var(--color-primario);
 }
 
-.texto-blanco {
+.text-blanco {
     color: var(--color-blanco);
 }
 
