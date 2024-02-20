@@ -57,3 +57,22 @@
     }
 
     add_action('widgets_init', 'fitness360_widgets');
+
+    // Crear Shortcode
+    function fitness360_ubicacion_shortcode(){
+        ?>
+            <div class="mapa">
+                <?php
+                    if(is_page('contacto')) {
+                        the_field('ubicacion');
+                    }
+                ?>
+            </div>
+            <h2 class="text-center text-primary">
+                Formulario de Contacto
+            </h2>
+        <?php
+        echo do_shortcode('[contact-form-7 id="60256a8" title="Formulario de contacto 1"]');
+    }
+
+    add_shortcode('fitness360_ubicacion', 'fitness360_ubicacion_shortcode'); 
