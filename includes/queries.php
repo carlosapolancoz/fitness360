@@ -84,7 +84,7 @@ function fitness360_instructores()
 function fitness360_testimoniales()
 {
     ?>
-        <ul class="listado-testimoniales instructores">
+        <ul class="listado-testimoniales swiper-wrapper">
             <?php
             $args = array(
                 'post_type' => 'testimoniales',
@@ -96,7 +96,7 @@ function fitness360_testimoniales()
                 $testimoniales->the_post();
 
             ?>
-                <li class="testimonial text-center">
+                <li class="testimonial text-center swiper-slide">
                     <blockquote>
                         <?php the_content(); ?>
                     </blockquote>

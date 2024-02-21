@@ -73,7 +73,7 @@
         <h2 class="text-center text-blanco">
             Testimoniales
         </h2>
-        <div class="contenedor-testimoniales">
+        <div class="contenedor-testimoniales swiper">
             <?php fitness360_testimoniales(); ?>
         </div>
     </section>
