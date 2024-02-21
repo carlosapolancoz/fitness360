@@ -9,7 +9,9 @@
     <header class="header">
         <div class="contenedor barra-navegacion">
             <div class="logo">
-                <img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo Fitness360">
+                <a href="<?php echo site_url('/') ?>">
+                    <img src="<?php echo get_template_directory_uri();?>/img/logo.svg" alt="Logo Fitness360">
+                </a>
             </div>
             <?php 
                 $args = array(
