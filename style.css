@@ -606,3 +606,74 @@ hr {
         opacity: 1;
     }
 }
+
+/** Instructores **/
+.instructor {
+    margin: 2rem 0;
+    border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.instructor:last-of-type {
+    border: none;
+}
+
+@media (min-width: 992px) {
+    .instructor {
+        position: relative;
+    }
+}
+
+.instructor img {
+    height: 40rem;
+    object-fit: cover;
+}
+
+.instructor .contenido {
+    padding: 3rem;
+}
+
+@media (min-width: 992px) {
+    .instructor .contenido {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        background-image: linear-gradient(rgb(0 0 0 / .75),rgb(0 0 0 / .75));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--color-blanco);
+        opacity: 0;
+        transition: opacity .5s ease-in-out;
+        transition-delay: .2s;
+    }
+
+    .instructor:hover .contenido {
+        opacity: 1;
+
+    }
+}
+
+.instructor h3 {
+    margin-bottom: 2rem;
+}
+
+.especialidad {
+    margin-top: 3rem;
+}
+
+.instructor .etiqueta {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    text-transform: uppercase;
+    font-family: var(--fuente-headings);
+    margin-right: 2rem;
+    font-size: 2.2rem;
+    border-radius: .5rem;
+    padding: .5rem 2rem;
+}
+
+.instructor .etiqueta:last-of-type {
+    margin-right: 0;
+}

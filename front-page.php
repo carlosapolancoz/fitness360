@@ -57,6 +57,14 @@
             </a>
         </div>
     </main>
+
+    <section class="contenedor seccion">
+        <h2 class="text-center text-primary">
+            Nuestros Instructores
+        </h2>
+        <p class="text-center">Instrutores profesionales que te ayudarán a lograr tus objetivos</p>
+        <?php fitness360_instructores(); ?>
+    </section>
 <?php
     get_footer();
 ?>
