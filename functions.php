@@ -27,12 +27,13 @@
         // Archivos CSS
         wp_enqueue_style('normalize', 'https://necolas.github.io/normalize.css/8.0.1/normalize.css', array(), '8.0.1');
         wp_enqueue_style('lightboxcss', get_template_directory_uri() . '/css/lightbox.min.css', array(), '2.11.4');
+        wp_enqueue_style('swipercss', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.6');
         wp_enqueue_style('style', get_stylesheet_uri(), array('normalize'), '1.0.0');
 
         // Archivos JS
         wp_enqueue_script('jquery');
         wp_enqueue_script('lightboxjs', get_template_directory_uri() . '/js/lightbox.min.js', array('jquery'), '2.11.4', true);
-
+        wp_enqueue_script('swiperjs', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.6', true);
     }
 
     add_action('wp_enqueue_scripts', 'fitness360_scripts_styles');

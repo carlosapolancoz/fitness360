@@ -639,7 +639,7 @@ hr {
         width: 100%;
         height: 100%;
         top: 0;
-        background-image: linear-gradient(rgb(0 0 0 / .75),rgb(0 0 0 / .75));
+        background-image: linear-gradient(rgb(0 0 0 / .75), rgb(0 0 0 / .75));
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -676,4 +676,61 @@ hr {
 
 .instructor .etiqueta:last-of-type {
     margin-right: 0;
+}
+
+/** Testimoniales **/
+.testimoniales {
+    background: linear-gradient(rgb(0 0 0 / .75),
+            rgb(0 0 0 / .75)), url(img/testimonial-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.contenedor-testimoniales {
+    width: min(95%, 80rem);
+    margin: 0 auto;
+}
+
+.testimonial {
+    color: var(--color-blanco);
+}
+
+.testimonial blockquote {
+    position: relative;
+    padding-left: 12rem;
+}
+
+.testimonial blockquote::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background-image: url(img/quote.svg);
+    background-repeat: no-repeat;
+    width: 10rem;
+    height: 9rem;
+}
+
+.testimonial-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .testimonial-footer {
+        justify-content: flex-end;
+    }
+}
+
+.testimonial-footer img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
+
+.testimonial-footer p {
+    font-weight: 700;
+    color: var(--color-primario);
 }
