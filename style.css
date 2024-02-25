@@ -157,6 +157,21 @@ hr {
 }
 
 /** Header **/
+body.home .header {
+    padding-top: 2rem;
+    height: auto;
+    min-height: 70rem;
+    background-size: cover;
+    background-position: center center;
+}
+
+@media (min-width: 768px) {
+    body.home .header {
+        height: 100vh;
+        max-height: 90rem;
+    }
+}
+
 .header {
     background-color: var(--color-gris);
 }
@@ -174,11 +189,82 @@ hr {
     }
 }
 
+.tagline {
+    color: var(--color-blanco);
+    margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+    .tagline {
+        color: var(--color-blanco);
+        margin-top: 15rem;
+    }
+}
+
+.tagline p {
+    font-size: 2rem;
+}
+
+@media (min-width: 992px) {
+    .fixed-top {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: var(--color-gris);
+        padding: 1rem 5rem;
+        height: 10rem;
+        z-index: 1000;
+        transition: background-color 300ms ease-in-out;
+    }
+
+    .fixed-top .logo {
+        width: 12rem;
+    }
+}
+
 /*
 .menu-principal ul {
     display: none;
 }
 */
+
+.hamburguer-menu:hover {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .hamburguer-menu {
+        display: none;
+    }
+}
+
+.contenedor-menu {
+    opacity: 0;
+    max-height: 0;
+    transition-delay: 100ms, 300ms;
+    transition-property: opacity, max-height;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+}
+
+
+@media (min-width: 768px) {
+    .contenedor-menu {
+        all: unset;
+    }
+}
+
+
+.mostrar {
+    opacity: 1;
+    max-height: 35rem;
+    transition-delay: 100ms, 300ms;
+    transition-property: max-height, opacity;
+    transition-timing-function: ease-in-out;
+    transition-duration: 300ms;
+} 
+
 
 @media (min-width: 768px) {
     .menu-principal {
@@ -479,6 +565,11 @@ hr {
     gap: .5rem;
 }
 
+.meta-info .post-categories {
+    display: flex;
+    gap: 1rem;
+}
+
 /** Formulario de contact **/
 
 .wpcf7-form label {
@@ -734,4 +825,27 @@ hr {
 .testimonial-footer p {
     font-weight: 700;
     color: var(--color-primario);
+}
+
+
+/** Animación Letras **/
+.ml10 {
+    position: relative;
+    font-weight: 900;
+    font-size: 4em;
+}
+
+.ml10 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+
+.ml10 .letter {
+    display: inline-block;
+    line-height: 1em;
+    transform-origin: 0 0;
 }

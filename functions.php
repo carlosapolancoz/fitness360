@@ -34,7 +34,8 @@
         wp_enqueue_script('jquery');
         wp_enqueue_script('lightboxjs', get_template_directory_uri() . '/js/lightbox.min.js', array('jquery'), '2.11.4', true);
         wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.6', true);
-        wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('swiper-js'), '1.0.0', true);
+        wp_enqueue_script('anime', 'https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js', array(), '2.0.2', true);
+        wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js', array('swiper-js', 'anime'), '1.0.0', true);
     }
 
     add_action('wp_enqueue_scripts', 'fitness360_scripts_styles');
@@ -80,3 +81,40 @@
     }
 
     add_shortcode('fitness360_ubicacion', 'fitness360_ubicacion_shortcode'); 
+
+    /** Imagenes dinamicas como BG **/
+    function fitness360_hero_imagen() {
+        // Obtener el ID de la página
+        $front_id = get_option('page_on_front');
+        
+        // Obtener la imagen
+        $id_imagen = get_field('hero_imagen', $front_id, false); 
+    
+        // Verificar si se obtuvo la imagen correctamente
+        if ($id_imagen) {
+            // Obtener la URL de la imagen
+            $imagen = wp_get_attachment_image_src($id_imagen, 'full');
+    
+            // Verificar si se obtuvo la URL de la imagen correctamente
+            if ($imagen) {
+                // Obtener solo la URL de la imagen
+                $url_imagen = $imagen[0];
+    
+                // Crear CSS
+                $imagen_destacada_css = "
+                    body.home .header {
+                        background-image: linear-gradient(rgb(0 0 0 / .75), rgb(0 0 0 / .75)), url('$url_imagen');
+                    }
+                ";
+    
+                // Registrar el estilo
+                wp_register_style('custom-style', false);
+                wp_enqueue_style('custom-style');
+    
+                // Agregar CSS personalizado
+                wp_add_inline_style('custom-style', $imagen_destacada_css);
+            }
+        }
+    }
+    add_action('init', 'fitness360_hero_imagen');
+    
